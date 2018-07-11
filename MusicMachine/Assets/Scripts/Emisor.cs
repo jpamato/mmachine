@@ -43,6 +43,7 @@ public class Emisor : MonoBehaviour {
 	}*/
 
 	public void Delete(){
+		Debug.Log ("aca");
 		Destroy (blockCollider);
 		Destroy (gameObject);
 	}

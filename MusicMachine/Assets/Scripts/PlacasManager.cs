@@ -48,6 +48,11 @@ public class PlacasManager : MonoBehaviour {
 		GameObject go = GameObject.Instantiate (placa, pos, Quaternion.identity, placasContainer.transform);
 		go.transform.LookAt (dir);
 		Vector3 s = go.transform.localScale;
-		go.transform.localScale = new Vector3 (Mathf.Abs(placaOut.x-placaIn.x),s.y,s.z);
+		float xScale = Mathf.Abs (placaOut.x - placaIn.x);
+		go.transform.localScale = new Vector3 (xScale,s.y,s.z);
+		Placa p = go.GetComponent<Placa> ();
+		int n = (int)(xScale * 100) % 12;
+		int octava = (12 * (4 - (int)xScale)) + 24;
+		p.note = octava + n;
 	}
 }

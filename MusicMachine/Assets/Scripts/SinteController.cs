@@ -62,8 +62,8 @@ public class SinteController : MonoBehaviour {
 			Placa p = collision.collider.GetComponent<Placa>();
 			//Debug.Log (p.note);
 			if (p != null) {
-				LibPD.SendFloat ("dur"+index, dur * 1000);
-				LibPD.SendFloat ("envOut"+index, (dur-(dur*emisor.art)) * 1000);
+				LibPD.SendFloat ("dur"+index, dur*emisor.art*1000);
+				//LibPD.SendFloat ("envOut"+index, (dur-(dur*emisor.art)) * 1000);
 				LibPD.SendFloat ("vel"+index, 127 * vel * 1f);
 				LibPD.SendFloat ("har"+index, emisor.har);
 				LibPD.SendFloat ("modIn"+index, emisor.iMod);
